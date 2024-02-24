@@ -1,14 +1,15 @@
 class MemoryGame {
-  constructor(square, overlay, modal, playAgain, lives, result) {
+  constructor(square, overlay, modal, playAgain, lives, result, back) {
     this.square = square;
     this.overlay = overlay;
     this.modal = modal;
     this.playAgain = playAgain;
     this.lives = lives;
     this.result = result;
+    this.back = back;
     this.colorArray = ['red','blue','green','lime','orange','pink', 'red','blue','green','lime','orange','pink'];
     this.state = [];
-    this.handicap = 10;
+    this.handicap = Number(localStorage.getItem('lives'));
     this.lifeCount = this.handicap;
     this.matches = 0;
     this.init();
@@ -20,6 +21,7 @@ class MemoryGame {
     this.play();
     this.playAgain.addEventListener('click', this.reset)
     this.lives.textContent = this.lifeCount;
+    this.back.classList.remove('hidden');
   }
 
   randomizeSquares = () => {
@@ -39,6 +41,10 @@ class MemoryGame {
   play = () => {
     this.square.forEach(square => {
       square.addEventListener('click', (event) => {
+        if(!square.classList.contains('bg-white'))
+        {
+          return;
+        }
         square.classList.toggle('bg-white');
         this.state.push(event.target);
 
@@ -102,6 +108,7 @@ class MemoryGame {
     this.overlay.classList.toggle('hidden');
     this.modal.classList.toggle('hidden');
     this.modal.classList.toggle('flex');
+    this.back.classList.add('hidden');
   }
 
   reset = () => {
@@ -110,7 +117,7 @@ class MemoryGame {
     this.modal.classList.toggle('hidden');
     this.modal.classList.toggle('flex');
     this.colorArray = ['red','blue','green','lime','orange','pink', 'red','blue','green','lime','orange','pink'];
-    
+    this.back.classList.remove('hidden');
     this.square.forEach(square => {
       square.classList.remove('bg-red-500');
       square.classList.remove('bg-blue-500');
@@ -177,5 +184,6 @@ const action = new MemoryGame(
   document.querySelector('#modal'),
   document.querySelector('#play-again'),
   document.querySelector('#lives'),
-  document.querySelector('#result')
+  document.querySelector('#result'),
+  document.querySelector('#back-btn')
 )

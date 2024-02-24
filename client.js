@@ -16,11 +16,14 @@ class OpenModals {
     this.settingsBtn.addEventListener('click', this.openSettings);
     this.increase.addEventListener('click', this.livesUp);
     this.decrease.addEventListener('click', this.livesDown);
+    this.livesCounter = localStorage.getItem('lives');
+    this.handicap.textContent = localStorage.getItem('lives');
   }
 
   closeModals = () => {
     this.overlay.classList.toggle('hidden');
     this.settings.classList.toggle('hidden');
+    localStorage.setItem('lives', this.livesCounter);
   }
 
   openSettings = () => {
@@ -54,5 +57,3 @@ const action = new OpenModals(
   document.querySelector('#down'),
   document.querySelector('#handicap')
 );
-
-
