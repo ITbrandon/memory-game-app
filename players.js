@@ -60,7 +60,8 @@ class TopPlayers {
     const card = document.createElement('article');
     card.classList.add('bg-white');
     card.classList.add('text-black');
-    card.classList.add('font-retro');
+    card.classList.add('font-mono');
+    card.classList.add('text-2xl')
     card.classList.add('flex');
     card.classList.add('flex-col');
     card.classList.add('items-center');
