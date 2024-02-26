@@ -1,5 +1,5 @@
 class OpenModals {
-  constructor(overlay, closeBtn, settings, settingsBtn, increase, decrease, handicap, review, reviewBtn, closeReview, form, textArea){
+  constructor(overlay, closeBtn, settings, settingsBtn, increase, decrease, handicap, review, reviewBtn, closeReview, form, textArea, howTo, howToBtn, closeHowTo, mobileHowToBtn, mobileReviewBtn){
     this.overlay = overlay;
     this.closeBtn = closeBtn;
     this.settings = settings;
@@ -12,6 +12,11 @@ class OpenModals {
     this.closeReview = closeReview;
     this.form = form;
     this.textArea = textArea;
+    this.howTo = howTo;
+    this.howToBtn = howToBtn;
+    this.closeHowTo = closeHowTo;
+    this.mobileHowToBtn = mobileHowToBtn;
+    this.mobileReviewBtn = mobileReviewBtn;
     this.livesCounter = 10;
     this.init();
   }
@@ -22,8 +27,12 @@ class OpenModals {
     this.increase.addEventListener('click', this.livesUp);
     this.decrease.addEventListener('click', this.livesDown);
     this.reviewBtn.addEventListener('click', this.openForm);
+    this.mobileReviewBtn.addEventListener('click', this.openForm);
     this.closeReview.addEventListener('click', this.closeForm);
     this.form.addEventListener('submit', this.submitForm);
+    this.howToBtn.addEventListener('click', this.openHowToPlay);
+    this.mobileHowToBtn.addEventListener('click', this.openHowToPlay);
+    this.closeHowTo.addEventListener('click', this.closeHowToPlay);
     this.livesCounter = localStorage.getItem('lives');
     this.handicap.textContent = localStorage.getItem('lives');
   }
@@ -70,6 +79,16 @@ class OpenModals {
     this.closeForm();
     this.textArea.value = "";
   }
+
+  openHowToPlay = () => {
+    this.overlay.classList.toggle('hidden');
+    this.howTo.classList.toggle('hidden');
+  }
+
+  closeHowToPlay = () => {
+    this.overlay.classList.toggle('hidden');
+    this.howTo.classList.toggle('hidden');
+  }
 }
 
 const action = new OpenModals(
@@ -84,5 +103,10 @@ const action = new OpenModals(
   document.querySelector('#review-btn'),
   document.querySelector('#close-review'),
   document.querySelector('#review-form'),
-  document.querySelector('#text-area')
+  document.querySelector('#text-area'),
+  document.querySelector('#how-to-modal'),
+  document.querySelector('#how-to-btn'),
+  document.querySelector('#close-how-to'),
+  document.querySelector('#mobile-how-to-btn'),
+  document.querySelector('#mobile-review-btn')
 );
