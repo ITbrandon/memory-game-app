@@ -1,6 +1,8 @@
+"use strict";
+
 class TopPlayers {
   constructor(gallery){
-    this.gallery = gallery;
+    this.gallery = gallery; // Create an instance of Top Players
     this.players = [
     {
       name: 'Alex Mullen',
@@ -40,15 +42,37 @@ class TopPlayers {
     {
       name: 'Kathy Pennell',
       picture: 'kathy.jpg'
+    },
+
+    {
+      name: 'Jill Price',
+      picture: 'jill.jpg'
+    },
+
+    {
+      name: 'Yohan John',
+      picture: 'yohan.jpg'
+    },
+
+    {
+      name: 'Mark Burrows',
+      picture: 'mark.jpg'
+    },
+
+    {
+      name: 'Paul King',
+      picture: 'paul.jpg'
     }
-  ];
+  ]; // Array of Top Players
     this.init();
   }
 
+  // Initialize the gallery.
   init = () => {
     this.getObjects();
   }
 
+  // Get player objects and create corresponding cards.
   getObjects = () => {
     for(let i = 0; i < this.players.length; i++)
     {
@@ -56,6 +80,7 @@ class TopPlayers {
     }
   }
 
+  // Create a card for a player.
   createCards = (player) => {
     const card = document.createElement('article');
     card.classList.add('bg-white');
@@ -93,10 +118,12 @@ class TopPlayers {
     this.displayCard(card);
   }
 
+  // Display the card in the gallery
   displayCard = (card) => {
     this.gallery.appendChild(card);
   }
 
 }
 
+// Initialize TopPlayers instance with appropriate gallery element
 const action = new TopPlayers(document.querySelector('#gallery'))

@@ -32,11 +32,15 @@
 </head>
 <body class="bg-gradient-to-b from-[#140334] to-[#a00c95] h-screen flex flex-col justify-center items-center p-4">
 
+<!-- Overlay -->
 <div class="hidden fixed top-0 left-0 w-full h-full bg-[#00000080] z-10" id="overlay"></div>
 
+  <!-- Game State -->
   <nav class="w-full flex justify-center mb-4">
     <h3 class="text-white text-4xl font-retro">Lives: <span id = "lives"></span></h3>
   </nav>
+
+  <!-- Game Board -->
   <section class="grid grid-cols-4 gap-4" id="gameboard">
   <div class="h-20 w-20 md:h-36 md:w-36 border-2 border-solid border-white shadow-lg cursor-pointer hover:border-black hover:border-4 duration-300" id="square" id ="1"></div>
   <div class="h-20 w-20 md:h-36 md:w-36 border-2 border-solid border-white shadow-lg cursor-pointer hover:border-black hover:border-4 duration-300" id="square" id ="2"></div>
@@ -52,8 +56,10 @@
   <div class="h-20 w-20 md:h-36 md:w-36 border-2 border-solid border-white shadow-lg cursor-pointer hover:border-black hover:border-4 duration-300" id="square" id ="12"></div>
   </section>
 
+  <!-- Go Back Button -->
   <a href="index.html"><div id="back-btn" class="absolute z-10 top-1 left-1 w-10 h-10 rounded-2xl border-2 border-solid border-black bg-yellow-50 p-4 text-black flex items-center justify-center font-retro cursor-pointer hover:bg-blue-600 hover:text-yellow-50 duration-300"><i class="fa-solid fa-arrow-left"></i></div></a>
   
+  <!-- Result Modal -->
   <div class="hidden w-full h-full" id = "modal">
     <div class = "w-72 gap-4 p-4 bg-gray-200 border-2 border-solid border-black z-10 shadow-lg shadow-black absolute flex flex-col justify-center items-center top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 font-retro">
     <p id="result">Congratulations</p>

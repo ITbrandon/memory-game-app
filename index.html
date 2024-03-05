@@ -31,9 +31,10 @@
   </script>
 </head>
 <body>
-
+  <!-- Overlay -->
   <div class="hidden fixed top-0 left-0 w-full h-full bg-[#00000080] z-10" id="overlay"></div>
 
+  <!-- Mobile Navigation -->
   <nav class="md:hidden text-white bg-black p-4 sticky top-0 ">
     <ul class="flex justify-evenly items-center text-xl">
       <li id="mobile-how-to-btn" class="duration-300 hover:scale-125 cursor-pointer active:text-gray-500"><i class="fa fa-question-circle"></i></li>
@@ -42,6 +43,7 @@
     </ul>
   </nav>
 
+  <!-- Desktop Navigation -->
   <nav class="hidden md:block text-white bg-black p-4 sticky top-0">
     <ul class="flex justify-evenly font-retro">
       <li class="duration-300 hover:scale-125 cursor-pointer active:text-gray-500" id="how-to-btn">How to Play</li>
@@ -49,25 +51,30 @@
       <li class="duration-300 hover:scale-125 cursor-pointer active:text-gray-500"><a href="players.html">Top Players</a></li>
     </ul>
   </nav>
+  <!-- Main Content -->
   <main class="flex flex-col items-center justify-center gap-8 h-screen bg-black p-2">
-
+  
+  <!-- Icon and Description -->
   <section class="flex justify-center items-center gap-8">
     <i class="fa-solid fa-brain text-9xl text-white duration-1000 animate-spin"></i>
     <p class="text-white max-w-80 text-center font-retro leading-relaxed">Welcome to the Best Memory Game of All time please enjoy our awesome Game and feel free to contact us about the game or any bugs that may have happened during your time at our site</p>
   </section>
 
+  <!-- Play Button and Settings Button -->
   <section class="flex gap-8">
     <a href="game.html"> <button class="text-white border-white border-solid border-2 bg-black p-4 w-auto font-retro hover:bg-white hover:text-black duration-500 rounded-xl">Play</button></a>
     <button id="settings-button" class="text-white border-white border-solid border-2 bg-black p-4 w-auto font-retro hover:bg-white hover:text-black duration-500 rounded-xl">Settings</button>
   </section>
 </main>
 
+<!-- Footer -->
 <footer class="text-center bg-black text-white p-4">
   <p class="leading-relaxed font-retro">
     &copy; 2024 Memory Game | All Rights Reserved | Created by Brandon Iticka
   </p>
 </footer>
 
+<!-- Settings Modal -->
 <div class="hidden w-full h-full" id = "settings-modal">
 
   <div class = "w-72 gap-4 p-4 bg-white border-2 border-solid border-black z-10 absolute flex flex-col justify-center items-center top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 font-retro rounded-xl">
@@ -84,10 +91,12 @@
 </div>
 </div>  
 
+<!-- Close Modal Button -->
 <div id="close" class="absolute z-10 top-1 left-1 w-10 h-10 rounded-2xl border-2 border-solid border-black bg-white p-4 text-black flex items-center justify-center font-retro cursor-pointer hover:bg-red-600 hover:text-white duration-300">X</div>
 
 </div>
 
+<!-- Leave Review Modal -->
 <div class="hidden w-full h-full" id = "review-modal">
 
 <div class="w-auto gap-4 p-4 bg-black border-2 border-solid border-white z-10 absolute flex flex-col justify-center items-center top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 font-retro rounded-xl">
@@ -95,15 +104,17 @@
 <h2 class="text-white">Please Leave a Review</h2>
 <form id="review-form" class="flex flex-col gap-4">
   <textarea name="review" id="text-area" cols="20" rows="10" placeholder="Write a Review" class="p-2"></textarea>
-  <button type="submit" class="text-white bg-black p-4 border-2 border-white border-solid hover:bg-white hover:text-black hover:border-black duration-500">Submit</button>
+  <button id="submit-btn" type="submit" class="text-white bg-black p-4 border-2 border-white border-solid hover:bg-white hover:text-black hover:border-black duration-500">Submit</button>
 </form>
 
 </div>
 
+<!-- Close Modal Button -->
 <div id="close-review" class="absolute z-10 top-1 left-1 w-10 h-10 rounded-2xl border-2 border-solid border-black bg-white p-4 text-black flex items-center justify-center font-retro cursor-pointer hover:bg-red-600 hover:text-white duration-300">X</div>
 
 </div>
 
+<!-- How to Play Modal -->
 <div class="hidden w-full h-full" id = "how-to-modal">
 
   <div class="w-auto gap-4 p-4 bg-black border-2 border-solid border-white z-10 absolute flex flex-col justify-center items-center top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 font-retro rounded-xl text-xs md:text-base">
@@ -113,6 +124,7 @@
 
   </div>
 
+  <!-- Close Modal Button -->
   <div id="close-how-to" class="absolute z-10 top-1 left-1 w-10 h-10 rounded-2xl border-2 border-solid border-black bg-white p-4 text-black flex items-center justify-center font-retro cursor-pointer hover:bg-red-600 hover:text-white duration-300">X</div>
   
   </div>

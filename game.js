@@ -1,20 +1,23 @@
+"use strict";
+
 class MemoryGame {
   constructor(square, overlay, modal, playAgain, lives, result, back) {
-    this.square = square;
-    this.overlay = overlay;
-    this.modal = modal;
-    this.playAgain = playAgain;
-    this.lives = lives;
-    this.result = result;
-    this.back = back;
-    this.colorArray = ['red','blue','green','lime','orange','pink', 'red','blue','green','lime','orange','pink'];
-    this.state = [];
-    this.handicap = Number(localStorage.getItem('lives'));
-    this.lifeCount = this.handicap;
-    this.matches = 0;
-    this.init();
+    this.square = square; // The list of square elements
+    this.overlay = overlay; // The overlay element
+    this.modal = modal; // The modal element
+    this.playAgain = playAgain; // The play-again button element
+    this.lives = lives; // The element displaying remaining lives
+    this.result = result; // The element displaying game result
+    this.back = back; // The back button element
+    this.colorArray = ['red','blue','green','lime','orange','pink', 'red','blue','green','lime','orange','pink']; // Array of Colors
+    this.state = []; // Game State
+    this.handicap = Number(localStorage.getItem('lives')); // Retrieve lives from local storage
+    this.lifeCount = this.handicap; // Current lives count
+    this.matches = 0; // Number of matched pairs
+    this.init(); // Initialize the game
   }
 
+  // Initialize the memory game.
   init = () => {
     this.randomizeSquares();
     this.hideSquares();
@@ -24,6 +27,7 @@ class MemoryGame {
     this.back.classList.remove('hidden');
   }
 
+  // Randomize the colors of squares.
   randomizeSquares = () => {
     this.square.forEach(square => {
     let randomNumber = Math.floor(Math.random() * this.colorArray.length);
@@ -32,12 +36,14 @@ class MemoryGame {
     });
   }
 
+  // Hide all squares
   hideSquares = () => {
     this.square.forEach(square => {
       square.classList.add('bg-white');
     })
   }
 
+  // Handle square click events
   play = () => {
     this.square.forEach(square => {
       square.addEventListener('click', (event) => {
@@ -58,6 +64,7 @@ class MemoryGame {
     })
   }
 
+  // Check if two squares match
   checkMatch = (first, second) => {
 
     const firstColor = first.classList[this.getColorIndex(first)];
@@ -104,6 +111,7 @@ class MemoryGame {
     }
   }
 
+  // Handle game over state
   gameOver = () => {
     this.overlay.classList.toggle('hidden');
     this.modal.classList.toggle('hidden');
@@ -111,6 +119,7 @@ class MemoryGame {
     this.back.classList.add('hidden');
   }
 
+  // Reset the game
   reset = () => {
     this.matches = 0;
     this.overlay.classList.toggle('hidden');
@@ -138,6 +147,7 @@ class MemoryGame {
     this.lives.textContent = this.lifeCount;
   }
 
+  // Get the color index of a square
   getColorIndex = (square) => {
     console.log(square.classList)
     let classArray = Array.from(square.classList)
@@ -177,7 +187,7 @@ class MemoryGame {
   }
   }
 
-
+// Initialize MemoryGame instance with appropriate DOM elements
 const action = new MemoryGame(
   document.querySelectorAll('#square'),
   document.querySelector('#overlay'),
