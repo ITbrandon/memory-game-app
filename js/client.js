@@ -36,9 +36,6 @@ class OpenModals {
     this.howToBtn.addEventListener('click', this.openHowToPlay);
     this.mobileHowToBtn.addEventListener('click', this.openHowToPlay);
     this.closeHowTo.addEventListener('click', this.closeHowToPlay);
-    // Retrieve lives counter from local storage and update display
-    this.livesCounter = localStorage.getItem('lives');
-    this.handicap.textContent = localStorage.getItem('lives');
   }
 
   //Close the settings modal
@@ -52,6 +49,21 @@ class OpenModals {
   openSettings = () => {
     this.overlay.classList.toggle('hidden');
     this.settings.classList.toggle('hidden');
+    // Retrieve lives counter from local storage and update display
+    let livesFromLocalStorage = localStorage.getItem('lives');
+
+    if (livesFromLocalStorage === null || livesFromLocalStorage === undefined || isNaN(parseInt(livesFromLocalStorage))) 
+    {
+        this.livesCounter = 10;
+        localStorage.setItem('lives', this.livesCounter);
+    } 
+    else
+    {
+        this.livesCounter = parseInt(livesFromLocalStorage);
+    }
+
+    this.handicap.textContent = this.livesCounter;
+     
   }
 
  //Increase the lives counter
