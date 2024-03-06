@@ -8,8 +8,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="output.css">
-  <script src="game.js" type="module"></script>
+  <link rel="stylesheet" href="../css/output.css">
+  <script src="../js/game.js" type="module"></script>
   <script>
     tailwind.config = {
   content: ["./*.{html,js}"],
@@ -57,14 +57,14 @@
   </section>
 
   <!-- Go Back Button -->
-  <a href="index.html"><div id="back-btn" class="absolute z-10 top-1 left-1 w-10 h-10 rounded-2xl border-2 border-solid border-black bg-yellow-50 p-4 text-black flex items-center justify-center font-retro cursor-pointer hover:bg-blue-600 hover:text-yellow-50 duration-300"><i class="fa-solid fa-arrow-left"></i></div></a>
+  <a href="../index.html"><div id="back-btn" class="absolute z-10 top-1 left-1 w-10 h-10 rounded-2xl border-2 border-solid border-black bg-yellow-50 p-4 text-black flex items-center justify-center font-retro cursor-pointer hover:bg-blue-600 hover:text-yellow-50 duration-300"><i class="fa-solid fa-arrow-left"></i></div></a>
   
   <!-- Result Modal -->
   <div class="hidden w-full h-full" id = "modal">
     <div class = "w-72 gap-4 p-4 bg-gray-200 border-2 border-solid border-black z-10 shadow-lg shadow-black absolute flex flex-col justify-center items-center top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 font-retro">
     <p id="result">Congratulations</p>
     <button class="text-white bg-green-600 border-2 border-solid border-black rounded-xl w-24 h-16 cursor-pointer shadow-lg duration-300 hover:bg-white hover:text-black" id = "play-again">Play Again</button>
-    <a href="index.html"><button class="text-white bg-blue-600 border-2 border-solid border-black rounded-xl w-24 h-16 cursor-pointer shadow-lg duration-300 hover:bg-white hover:text-black" id = "home">Go Home</button></a>
+    <a href="../index.html"><button class="text-white bg-blue-600 border-2 border-solid border-black rounded-xl w-24 h-16 cursor-pointer shadow-lg duration-300 hover:bg-white hover:text-black" id = "home">Go Home</button></a>
   </div>      
 
 </div>

@@ -100,7 +100,7 @@ class TopPlayers {
     card.classList.add('p-4');
     
     const frame = document.createElement('img');
-    frame.setAttribute('src', `images/${player.picture}`);
+    frame.setAttribute('src', `../images/${player.picture}`);
     frame.setAttribute('alt', player.name);
     frame.classList.add('w-full');
     frame.classList.add('h-52')
